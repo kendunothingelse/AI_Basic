@@ -1,0 +1,21 @@
+package lab1;
+
+public class Agent {
+	private AgentProgram program;
+
+	public Agent() {
+	}
+
+	public Agent(AgentProgram aProgram) {
+		program = aProgram;
+	}
+
+	public Action execute(Percept p) {
+		if (program != null) {
+			return program.execute(p);
+		}else {
+			return NoOpAction.NO_OP;
+		}
+		
+	}
+}
