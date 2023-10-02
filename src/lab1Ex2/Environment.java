@@ -46,6 +46,7 @@ public class Environment {
 		if (action == Environment.SUCK_DIRT) {
 			envState.setLocationState(envState.getAgentLocation(), LocationState.CLEAN);
 		} else {
+			//Check which locations allow which actions
 			switch (envState.getAgentLocation()) {
 			case LOCATION_A:
 				if (action == MOVE_RIGHT) {
