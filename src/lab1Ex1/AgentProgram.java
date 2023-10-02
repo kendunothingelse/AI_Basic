@@ -1,6 +1,6 @@
-package lab1;
+package lab1Ex1;
 
-import lab1.Environment.LocationState;
+import lab1Ex1.Environment.LocationState;
 
 public class AgentProgram {
 

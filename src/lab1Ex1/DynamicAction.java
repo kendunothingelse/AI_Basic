@@ -1,4 +1,4 @@
-package lab1;
+package lab1Ex1;
 public class DynamicAction extends Action {
 	private String name;
 

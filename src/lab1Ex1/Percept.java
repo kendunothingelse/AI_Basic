@@ -1,4 +1,4 @@
-package lab1;
+package lab1Ex1;
 
 public class Percept {
 	private String agentLocation;
