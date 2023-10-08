@@ -19,7 +19,7 @@ public class BreadthFirstSearchAlgo implements ISearchAlgo {
 				return parent;
 			}
 			explore.add(parent);
-			List<Node> children = new ArrayList<Node>();
+			List<Node> children = parent.getChildrenNodes();
 			for (Node child : children) {
 				if (!frontier.contains(child) && !explore.contains(child)) {
 					frontier.add(child);

@@ -24,7 +24,10 @@ public class TestMain {
 		nodeE.addEdge(nodeG, 6);
 		nodeF.addEdge(nodeG, 1);
 		ISearchAlgo algo1 = new BreadthFirstSearchAlgo();
-		Node result = algo1.execute(nodeS, "G");
-		System.out.println(new NodeUtils().printPath(result));
+		ISearchAlgo algo2 = new DepthFirstSearchAlgo();
+		Node result1 = algo1.execute(nodeS, "H");
+		Node result2 = algo2.execute(nodeS, "H");
+		System.out.println(new NodeUtils().printPath(result1));
+//		System.out.println(new NodeUtils().printPath(result2));
 	}
 }
