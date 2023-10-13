@@ -23,10 +23,13 @@ public class UniformCostSearchAlgo implements ISearchAlgo {
 			List<Edge> children = current.getChildren();
 			for (Edge child : children) {
 				Node n = child.getEnd();
+				double newPathCost = current.getPathCost() + child.getWeight();
 				if (!explore.contains(n) && !frontier.contains(n)) {
 					frontier.add(n);// setParent
-				} else if (n.getPathCost() > (current.getPathCost() + child.getWeight())) {
-					n.setPathCost(current.getPathCost() + child.getWeight());
+					n.setParent(current);
+
+				} else if (frontier.contains(n)&& (n.getPathCost() > newPathCost)) {
+					n.setPathCost(newPathCost);
 					n.setParent(current);
 				}
 			}
