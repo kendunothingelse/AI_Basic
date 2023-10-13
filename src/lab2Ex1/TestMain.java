@@ -25,9 +25,11 @@ public class TestMain {
 		nodeF.addEdge(nodeG, 1);
 		ISearchAlgo algo1 = new BreadthFirstSearchAlgo();
 		ISearchAlgo algo2 = new DepthFirstSearchAlgo();
+		ISearchAlgo algo3 = new UniformCostSearchAlgo();
 		Node result1 = algo1.execute(nodeS, "H");
-		Node result2 = algo2.execute(nodeS, "H");
-		System.out.println(new NodeUtils().printPath(result1));
+		Node result3 = algo1.execute(nodeS, "H");
+		Node result2 = algo2.execute(nodeS, "S", "H");
+		System.out.println(new NodeUtils().printPath(result3));
 //		System.out.println(new NodeUtils().printPath(result2));
 	}
 }
