@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 public class TestMain {
 	public static void main(String[] args) {
@@ -26,10 +26,10 @@ public class TestMain {
 		ISearchAlgo algo1 = new BreadthFirstSearchAlgo();
 		ISearchAlgo algo2 = new DepthFirstSearchAlgo();
 		ISearchAlgo algo3 = new UniformCostSearchAlgo();
-		Node result1 = algo1.execute(nodeS, "H");
+		Node result1 = algo1.execute(nodeS, "G");
+		Node result2 = algo2.execute(nodeS, "G");
 		Node result3 = algo1.execute(nodeS, "H");
-		Node result2 = algo2.execute(nodeS, "S", "H");
-		System.out.println(new NodeUtils().printPath(result3));
-//		System.out.println(new NodeUtils().printPath(result2));
+		System.out.println(new NodeUtils().printPath(result1));
+		System.out.println(new NodeUtils().printPath(result2));
 	}
 }

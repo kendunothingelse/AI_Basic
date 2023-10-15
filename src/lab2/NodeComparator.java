@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 import java.util.Comparator;
 

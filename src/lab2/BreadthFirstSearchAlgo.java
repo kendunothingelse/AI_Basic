@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -37,16 +37,16 @@ public class BreadthFirstSearchAlgo implements ISearchAlgo {
 		List<Node> explore = new ArrayList<Node>();// explore set to store the node
 		frontier.add(root);
 		while (!frontier.isEmpty()) {
-			Node parent = frontier.poll();
-			if (parent.getLabel().contains(goal) || parent.getLabel().contains(start)) {
+			Node parent = frontier.poll();// remove the leaf node in frontier and make a parent node
+			if (parent.getLabel().contains(goal)) {
 				return parent;
 			}
 			explore.add(parent);
-			List<Node> neighbor = parent.getChildrenNodes();
-			for (Node node : neighbor) {
-				if (!frontier.contains(node) && !explore.contains(node)) {
-					frontier.add(node);
-					node.setParent(parent);
+			List<Node> children = parent.getChildrenNodes();
+			for (Node child : children) {
+				if (!frontier.contains(child) && !explore.contains(child)) {
+					frontier.add(child);
+					child.setParent(parent);
 				}
 			}
 		}

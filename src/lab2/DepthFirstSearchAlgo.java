@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,7 +13,7 @@ public class DepthFirstSearchAlgo implements ISearchAlgo {
 		// TODO Auto-generated method stub
 		Stack<Node> frontier = new Stack();
 		List<Node> explore = new ArrayList<Node>();// explore set to store the node
-		frontier.add(root);
+		frontier.push(root);
 		while (!frontier.isEmpty()) {
 			Node parent = frontier.pop();// remove the leaf node in frontier and make a parent node
 			if (parent.getLabel().contains(goal)) {
@@ -23,7 +23,7 @@ public class DepthFirstSearchAlgo implements ISearchAlgo {
 			List<Node> children = parent.getChildrenNodes();
 			for (Node child : children) {
 				if (!frontier.contains(child) && !explore.contains(child)) {
-					frontier.add(child);
+					frontier.push(child);
 					child.setParent(parent);
 				}
 			}
