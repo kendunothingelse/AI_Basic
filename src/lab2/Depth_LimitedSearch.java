@@ -32,7 +32,7 @@ public class Depth_LimitedSearch implements ISearchAlgo {
 						if (!explored.contains(node) && !frontier.contains(node)) {
 							frontier.add(node);
 							node.setParent(current);
-							node.setDepth(current.getDepth() + 1);
+							node.setDepth(current.getDepth() - 1);
 						}
 					}
 				}
