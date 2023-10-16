@@ -6,26 +6,17 @@ import java.util.Stack;
 
 public class Depth_LimitedSearch implements ISearchAlgo {
 
-	@Override
-	public Node execute(Node root, String goal) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Node execute(Node root, String start, String goal) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	public Node execute(Node root, String goal, int limitedDepth) {
 		Stack<Node> frontier = new Stack();
 		List<Node> explored = new ArrayList<Node>();
+		frontier.add(root);
 		while (!frontier.isEmpty()) {
 			Node current = frontier.pop();
-			if (current.getLabel().equals(goal)) {
+			if (current.getLabel().equals(goal))
 				return current;
-			} else {
+			else if (limitedDepth == 0)
+				return null;
+			else {
 				if (current.getDepth() < limitedDepth) {
 					List<Node> children = current.getChildrenNodes();
 					for (Node node : children) {
@@ -40,4 +31,17 @@ public class Depth_LimitedSearch implements ISearchAlgo {
 		}
 		return null;
 	}
+
+	@Override
+	public Node execute(Node root, String goal) {
+		// TODO Auto-generated method stub
+		return execute(root, goal, 4);
+	}
+
+	@Override
+	public Node execute(Node root, String start, String goal) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -27,10 +27,10 @@ public class TestMain {
 		ISearchAlgo algo2 = new DepthFirstSearchAlgo();
 		ISearchAlgo algo3 = new UniformCostSearchAlgo();
 		ISearchAlgo algo4 = new Depth_LimitedSearch();
-		Node result1 = algo1.execute(nodeS, "G");
-		Node result2 = algo2.execute(nodeS, "G");
-		Node result3 = algo3.execute(nodeS, "G");
-		Node result4 = algo4.execute(nodeS, "G");
+		Node result1 = algo1.execute(nodeA, "G");
+		Node result2 = algo2.execute(nodeS, "F");
+		Node result3 = algo3.execute(nodeS, "D");
+		Node result4 = algo4.execute(nodeA, "G");
 		System.out.println(new NodeUtils().printPath(result1));
 		System.out.println(new NodeUtils().printPath(result2));
 		System.out.println(new NodeUtils().printPath(result3));
