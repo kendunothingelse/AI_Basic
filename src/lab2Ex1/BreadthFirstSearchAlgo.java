@@ -27,7 +27,7 @@ public class BreadthFirstSearchAlgo implements ISearchAlgo {
 				}
 			}
 		}
-		return null;
+		return root;
 	}
 
 	@Override
