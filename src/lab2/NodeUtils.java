@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +10,7 @@ public class NodeUtils {
 			List<String> result = new ArrayList<String>();
 			result.add(node.getLabel());
 			Node tmp;
+			//get the traversal by move backward to get the first node
 			while ((tmp = node.getParent()) != null) {
 
 				result.add(tmp.getLabel());

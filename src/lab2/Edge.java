@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 public class Edge implements Comparable<Edge>{
 	private Node begin;
 	private Node end;

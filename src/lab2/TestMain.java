@@ -1,4 +1,4 @@
-package lab2Ex1;
+package lab2;
 
 public class TestMain {
 	public static void main(String[] args) {
@@ -24,7 +24,16 @@ public class TestMain {
 		nodeE.addEdge(nodeG, 6);
 		nodeF.addEdge(nodeG, 1);
 		ISearchAlgo algo1 = new BreadthFirstSearchAlgo();
-		Node result = algo1.execute(nodeS, "G");
-		System.out.println(new NodeUtils().printPath(result));
+		ISearchAlgo algo2 = new DepthFirstSearchAlgo();
+		ISearchAlgo algo3 = new UniformCostSearchAlgo();
+		ISearchAlgo algo4 = new Depth_LimitedSearch();
+		Node result1 = algo1.execute(nodeA, "G");
+		Node result2 = algo2.execute(nodeS, "F");
+		Node result3 = algo3.execute(nodeS, "D");
+		Node result4 = algo4.execute(nodeA, "G");
+		System.out.println(new NodeUtils().printPath(result1));
+		System.out.println(new NodeUtils().printPath(result2));
+		System.out.println(new NodeUtils().printPath(result3));
+		System.out.println(new NodeUtils().printPath(result4));
 	}
 }
