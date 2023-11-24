@@ -1,6 +1,7 @@
 package game_alphabeta_student;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class MiniMaxSearchAlgo implements ISearchAlgo {
@@ -12,6 +13,15 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 	@Override
 	public void execute(Node node) {
 		// Enter your code here
+		int maxValue = Integer.MIN_VALUE;
+		Node result = null;
+		for (Node child : node.getChildren()) {
+			int value = minValue(child);
+			if (value> maxValue) {
+				maxValue =value;
+				result = child;
+			}
+		}
 	}
 
 	// function MAX-VALUE(state) returns a utility value
@@ -22,7 +32,14 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 	// return v
 	public int maxValue(Node node) {
 		// Enter your code here
-		return Integer.MIN_VALUE;
+		if (node.isTerminal()) {
+			return node.getValue();
+		}
+		int result = Integer.MIN_VALUE;
+		for (Node child : node.getChildren()) {
+			result = Math.max(result, minValue(child));
+		}
+		return result;
 	}
 	// function MIN-VALUE(state) returns a utility value
 	// if TERMINAL-TEST(state) then return UTILITY(state)
@@ -33,6 +50,13 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 
 	public int minValue(Node node) {
 		// Enter your code here
-		return Integer.MAX_VALUE;
+		if (node.isTerminal()) {
+			return node.getValue();
+		}
+		int result = Integer.MAX_VALUE;
+		for (Node child : node.getChildren()) {
+			result = Math.min(result, maxValue(child));
+		}
+		return result;
 	}
 }
