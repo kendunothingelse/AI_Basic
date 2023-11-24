@@ -61,7 +61,7 @@ public class TestMain {
 
 		ISearchAlgo miniMaxAlgo = new MiniMaxSearchAlgo();
 		miniMaxAlgo.execute(a);
-		System.out.println();
-
+		ISearchAlgo alphaBetAlgo = new AlphaBetaSearchAlgo();
+		alphaBetAlgo.execute(a);
 	}
 }

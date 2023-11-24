@@ -17,11 +17,12 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 		Node result = null;
 		for (Node child : node.getChildren()) {
 			int value = minValue(child);
-			if (value> maxValue) {
-				maxValue =value;
+			if (value > maxValue) {
+				maxValue = value;
 				result = child;
 			}
 		}
+		System.out.println("Best move of " + node.getLabel() + " is: " + result.getValue());
 	}
 
 	// function MAX-VALUE(state) returns a utility value
@@ -32,14 +33,16 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 	// return v
 	public int maxValue(Node node) {
 		// Enter your code here
-		if (node.isTerminal()) {
-			return node.getValue();
-		}
-		int result = Integer.MIN_VALUE;
-		for (Node child : node.getChildren()) {
-			result = Math.max(result, minValue(child));
-		}
-		return result;
+        if (node.isTerminal()) {
+            return node.getValue();
+        }
+
+        int result = Integer.MIN_VALUE;
+        for (Node child : node.getChildren()) {
+            result = Math.max(result, minValue(child));
+        }
+
+        return result;
 	}
 	// function MIN-VALUE(state) returns a utility value
 	// if TERMINAL-TEST(state) then return UTILITY(state)
@@ -50,13 +53,15 @@ public class MiniMaxSearchAlgo implements ISearchAlgo {
 
 	public int minValue(Node node) {
 		// Enter your code here
-		if (node.isTerminal()) {
-			return node.getValue();
-		}
-		int result = Integer.MAX_VALUE;
-		for (Node child : node.getChildren()) {
-			result = Math.min(result, maxValue(child));
-		}
-		return result;
+        if (node.isTerminal()) {
+            return node.getValue();
+        }
+
+        int result = Integer.MAX_VALUE;
+        for (Node child : node.getChildren()) {
+            result = Math.min(result, maxValue(child));
+        }
+
+        return result;
 	}
 }
